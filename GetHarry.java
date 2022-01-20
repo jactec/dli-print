@@ -1,3 +1,4 @@
+
 /**
  * Question: read the file harry.txt, and print all the lines which contains word "Harry"
  * 
@@ -9,7 +10,30 @@
  * 
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class GetHarry {
-    
+    public static void main(String[] args) {
+        try {
+            File harryBook1 = new File("harry.txt");
+            Scanner harryFinder = new Scanner(harryBook1);
+            while (harryFinder.hasNextLine()) {
+                String line = harryFinder.nextLine();
+                Boolean theHarry = line.contains("harry");
+                Boolean hasHarry = line.contains("Harry");
+
+                if (hasHarry || theHarry) {
+                    System.out.println(line);
+                } else {
+                }
+            }
+
+            harryFinder.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Could not find Harry");
+            e.printStackTrace();
+        }
+    }
 }
