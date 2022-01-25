@@ -5,8 +5,8 @@ public class Pattern {
             String line = "";
             for (int sn = 1; sn < 10; sn++) {
                 int res = fn * sn;
-                String item = fn + " x " + sn + " = " + res + "\t";
-                line = line + item + " ";
+                String item = fn + " x " + sn + " = " + res;
+                line = line + item + "\t";
             }
             System.out.println(line);
         }
