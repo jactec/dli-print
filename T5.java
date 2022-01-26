@@ -3,12 +3,14 @@
 
 public class T5 {
     public static void main(String[] args) {
-        for (int i = 1; i <= 20; i++) {
-            int itemValue = 1;
-            for (int j = i; j >= 1; j--) {
-                itemValue = itemValue * j;
+        double sum = 0;
+        for (int index = 1; index <= 20; index++) {
+            double itemValue = 1;
+            for (double number = index; number >= 1; number--) {
+                itemValue = itemValue * number;
             }
-            System.out.println(itemValue);
+            sum = sum + itemValue;
         }
+        System.out.println(sum);
     }
 }
