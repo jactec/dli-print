@@ -13,28 +13,37 @@ import java.util.List;
 public class T7 {
     public static void main(String[] args) {
 
-        int M = 64;
-        int N = 128;
+        int m = 64;
+        int n = 128;
 
-        getHighestFactor(N);
-        getHighestFactor(M);
-    
+        List<Integer> factorsOfM = getFactors(m);
+        List<Integer> factorsOfN = getFactors(n);
+        
+        int hfom = getHighestFactor(factorsOfM);
+        int hfon = getHighestFactor(factorsOfN);
+        p(hfon);
+        p(hfom);
+
     }
 
-    private static List<Integer> getHighestFactor(int theNumber) {
+    private static int getHighestFactor(List<Integer> factors) {
+        int size = factors.size();
+        int lastIndex = size -1;
+        int lastElement = factors.get(lastIndex);
+        return lastElement;
+    }
+    
+    private static List<Integer> getFactors(int theNumber) {
         List<Integer> factors = new ArrayList<Integer>();
         for (int factor = 1; factor < theNumber / 2; factor++) {
             if (theNumber % factor == 0) {
                 factors.add(factor);
             }
         }
-        int lastElementOfArray = factors.get(factors.size() - 1);
-        p(lastElementOfArray);
         return factors;
     }
 
     private static void p(Object object) {
         System.out.println(object);
     }
-
 }
