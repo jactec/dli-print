@@ -1,4 +1,3 @@
-import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class T7 {
         p(hfon);
         p(hfom);
 
-    }
+    }  // AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK AFK 
 
     private static int getHighestFactor(List<Integer> factors) {
         int size = factors.size();
