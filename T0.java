@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Main {
+public class T0 {
     public static void main(String[] args) {
       Date now = new Date();
       int time = now.getHours();
