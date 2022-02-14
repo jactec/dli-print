@@ -4,12 +4,12 @@
 public class T5 {
     public static void main(String[] args) {
         double sum = 0;
-        for (double index = 1; index <= 20; index++) {
-            double itemValue = 1;
-            for (double number = index; number >= 1; number--) {
-                itemValue = itemValue * number;
+        double valueOfItem = 1;
+        for (double i = 1; i <= 20; i++) {
+            for (double n = i; n >= 1; n--) {
+                valueOfItem = n * valueOfItem;
             }
-            sum = sum + itemValue;
+            sum = sum + valueOfItem;
         }
         System.out.println(sum);
     }

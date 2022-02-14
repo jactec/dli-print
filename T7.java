@@ -24,11 +24,11 @@ public class T7 {
         print(hfom);
         print(hfon);
         
-        for (int i = hfon; /*loop the factors of n from largest to smallest */){
-            for (/*loop the factors of m from largest to smallest*/){
-                /*check if the two factors match*/
-            }
-        }
+        //for (int i = hfon; /*loop the factors of n from largest to smallest */){
+          //  for (/*loop the factors of m from largest to smallest*/){
+            //    /*check if the two factors match*/
+           // }
+        //}
         }
 
     private static int getHighestFactor(List<Integer> factors) {
