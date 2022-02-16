@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 题目：输入两个正整数m和n，求其最大公约数和最小公倍数。
  * 
@@ -10,41 +7,45 @@ import java.util.List;
  */
 
 public class T7 {
+    
     public static void main(String[] args) {
-
-        int m = 185;
-        int n = 164;
-
-        List<Integer> factorsOfM = getFactors(m);
-        List<Integer> factorsOfN = getFactors(n);
-
-        int hfom = getHighestFactor(factorsOfM);
-        int hfon = getHighestFactor(factorsOfN);
         
-        print(hfom);
-        print(hfon);
-        
-        //for (int i = hfon; /*loop the factors of n from largest to smallest */){
-          //  for (/*loop the factors of m from largest to smallest*/){
-            //    /*check if the two factors match*/
-           // }
-        //}
-        }
+        int M = 222;
+        int N = 33;
 
-    private static int getHighestFactor(List<Integer> factors) {
-        int lastIndex = factors.size() - 1;
-        int lastElement = factors.get(lastIndex);
-        return lastElement;
+        // The question is to get HCF and LCM, we will get HCF first, and we could get LCM out of HCF easily
+        int hcf = getHCF(M, N);
+        print("HCF: " + hcf);
+
+        int lcm = getLCM(M, N, hcf);
+        print("LCM: " + lcm);
+
     }
 
-    private static List<Integer> getFactors(int theNumber) {
-        List<Integer> factors = new ArrayList<Integer>();
-        for (int factor = 1; factor < theNumber / 2; factor++) {
-            if (theNumber % factor == 0) {
-                factors.add(factor);
-            }
+    /**
+     * 1. Run to test the result.
+     * 2. Try to run it manually in paper to see how it works
+     */
+    private static int getHCF(int m, int n) {
+        int biggerNumber = Math.max(m, n);
+        int smallerNumber = Math.min(m, n);
+        int remainder = biggerNumber%smallerNumber;
+        while(remainder!=0) {
+            // print(biggerNumber + ", " + smallerNumber + ", " + remainder);
+            remainder = biggerNumber%smallerNumber;
+            if (remainder == 0) break;
+            biggerNumber = smallerNumber;
+            smallerNumber = remainder;
         }
-        return factors;
+        return smallerNumber;
+    }
+
+
+    /**
+     * 1. Try to run it manually for multiple pars in paper, and try to understand how it works
+     */
+    private static int getLCM(int m, int n, int hcf) {
+        return m*n/hcf;
     }
 
     private static void print(Object object) {
