@@ -15,10 +15,10 @@ public class T7 {
 
         // The question is to get HCF and LCM, we will get HCF first, and we could get LCM out of HCF easily
         int hcf = getHCF(M, N);
-        print("HCF: " + hcf);
+        System.out.println("HCF: " + hcf);
 
         int lcm = getLCM(M, N, hcf);
-        print("LCM: " + lcm);
+        System.out.println("LCM: " + lcm);
 
     }
 
@@ -46,9 +46,5 @@ public class T7 {
      */
     private static int getLCM(int m, int n, int hcf) {
         return m*n/hcf;
-    }
-
-    private static void print(Object object) {
-        System.out.println(object);
     }
 }
